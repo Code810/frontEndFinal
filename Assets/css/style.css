@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbartop{
+    background-color: #0f3460;
+}
+.navbartopleft{
+    width: 25%;
+    font-size: 12px;
+}
+.navbartopright{
+    width: 30%;
+    font-size: 12px;
+
+}
+.navbartopright a{
+text-decoration: none;
+color: white;
+}
+.navbartopright img{
+width: 20px;
+}
