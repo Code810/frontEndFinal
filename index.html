@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="./Assets/slick-1.8.1/slick/slick.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
     <title>Document</title>
 </head>
@@ -111,49 +113,159 @@
             <div class="container">
                 <div class="bmenuleft col-lg-3">
                     <div class="btn-group  w-100 ">
-                        <button class="ctgbtn btn btn-light  btn-lg " type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="ctgbtn btn btn-light  btn-lg " type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="fa-solid fa-list"></i> <span class="ms-2 me-5  "> Categories</span>
-                            <i class="fa-solid fa-chevron-right chevronlg " ></i>
+                            <i class="fa-solid fa-chevron-right chevronlg "></i>
                         </button>
                         <ul class="dropdown-menu w-100 border-0 shadow ">
-                            <li><a class="dropdown-item mt-2 position-relative" href="#"><i class="fa-solid fa-shirt "></i><span
-                                        class="ms-3 me-5">Fashion</span><i class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a>
-                                    <div class="menubox">
-                                        <div class="col-lg-3">
-                                            <a href=""><b>Man Clothes</b></a>
-                                            <a href="">Shirt</a>
-                                            <a href="">T-shirt</a>
-                                            <a href="">Pant</a>
-                                            <a href="">Underwear</a>
+                            <li class="fmenulist"><a class="dropdown-item mt-2 position-relative" href="#"><i
+                                        class="fa-solid fa-shirt "></i><span class="ms-3 me-5">Fashion</span><i
+                                        class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a>
+                                <div class="menuboxf">
+                                    <div class="d-flex">
+                                        <div class="col-lg-9 d-flex flex-wrap ">
+                                            <div class="col-lg-3 mb-5 ">
+                                                <a href=""><b>Man Clothes</b></a>
+                                                <a href="">Shirt</a>
+                                                <a href="">T-shirt</a>
+                                                <a href="">Pant</a>
+                                                <a href="">Underwear</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Accessories</b></a>
+                                                <a href="">Belt</a>
+                                                <a href="">Hat</a>
+                                                <a href="">Watches</a>
+                                                <a href="">Sunlasses</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Shoes</b></a>
+                                                <a href="">Sneakers</a>
+                                                <a href="">Sandals</a>
+                                                <a href="">Formal</a>
+                                                <a href="">Casual</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Bags</b></a>
+                                                <a href="">Backpack</a>
+                                                <a href="">Crossbody Bags</a>
+                                                <a href="">Side Bags</a>
+                                                <a href="">Slides</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Woman Clothes</b></a>
+                                                <a href="">Shirt</a>
+                                                <a href="">T- shirt</a>
+                                                <a href="">Pant</a>
+                                                <a href="">Underwear</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Accessories</b></a>
+                                                <a href="">Belt</a>
+                                                <a href="">Hat</a>
+                                                <a href="">Watches</a>
+                                                <a href="">Sunglasses</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Shoes</b></a>
+                                                <a href="">Sneakers</a>
+                                                <a href="">Sandals</a>
+                                                <a href="">Formal</a>
+                                                <a href="">Casual</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Bags</b></a>
+                                                <a href="">Backpack</a>
+                                                <a href="">Crossbody Bags</a>
+                                                <a href="">Side Bags</a>
+                                                <a href="">Slides</a>
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <a href=""><b>Accessories</b></a>
-                                            <a href="">Belt</a>
-                                            <a href="">Hat</a>
-                                            <a href="">Watches</a>
-                                            <a href="">Sunlasses</a>
+                                            <img src="./Assets/img/Screenshot 2024-04-09 234339.png" class="w-100 "
+                                                alt="">
                                         </div>
-                                        <div class="col-lg-3">
-                                            <a href=""><b>Shoes</b></a>
-                                            <a href="">Belt</a>
-                                            <a href="">Hat</a>
-                                            <a href="">Watches</a>
-                                            <a href="">Sunlasses</a>
-                                        </div>
-                                        <div class="col-lg-3"></div>
-                                        <div class="col-lg-3"></div>
-                                        <div class="col-lg-3"></div>
-                                        <div class="col-lg-3"></div>
-                                        <div class="col-lg-3"></div>
                                     </div>
-                                    </li>
-                            <li><a class="dropdown-item mt-2 position-relative" href="#"><i class="fa-solid fa-desktop"></i><span
-                                        class="ms-3 me-5">Electronics</span><i class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a></li>
-                            <li><a class="dropdown-item mt-2 position-relative" href="#"><i class="fa-solid fa-bicycle"></i><span
-                                        class="ms-3 me-5">Bikes</span><i class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a></li>
-                            <li><a class="dropdown-item mt-2 position-relative" href="#"><i class="fa-solid fa-house"></i><span
-                                        class="ms-3 me-5">Home & Garden</span><i class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a></li>
+                                </div>
+                            </li>
+                            <li class="fmenulist"><a class="dropdown-item mt-2 position-relative" href="#"><i
+                                        class="fa-solid fa-desktop"></i><span class="ms-3 me-5">Electronics</span><i
+                                        class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a>
+                                <div class="menuboxf">
+                                    <div class="d-flex">
+                                        <div class="col-lg-11 d-flex flex-wrap ">
+                                            <div class="col-lg-3 mb-5 ">
+                                                <a href=""><b>Man Clothes</b></a>
+                                                <a href="">Shirt</a>
+                                                <a href="">T-shirt</a>
+                                                <a href="">Pant</a>
+                                                <a href="">Underwear</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Accessories</b></a>
+                                                <a href="">Belt</a>
+                                                <a href="">Hat</a>
+                                                <a href="">Watches</a>
+                                                <a href="">Sunlasses</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Shoes</b></a>
+                                                <a href="">Sneakers</a>
+                                                <a href="">Sandals</a>
+                                                <a href="">Formal</a>
+                                                <a href="">Casual</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Bags</b></a>
+                                                <a href="">Backpack</a>
+                                                <a href="">Crossbody Bags</a>
+                                                <a href="">Side Bags</a>
+                                                <a href="">Slides</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Woman Clothes</b></a>
+                                                <a href="">Shirt</a>
+                                                <a href="">T- shirt</a>
+                                                <a href="">Pant</a>
+                                                <a href="">Underwear</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Accessories</b></a>
+                                                <a href="">Belt</a>
+                                                <a href="">Hat</a>
+                                                <a href="">Watches</a>
+                                                <a href="">Sunglasses</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Shoes</b></a>
+                                                <a href="">Sneakers</a>
+                                                <a href="">Sandals</a>
+                                                <a href="">Formal</a>
+                                                <a href="">Casual</a>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href=""><b>Bags</b></a>
+                                                <a href="">Backpack</a>
+                                                <a href="">Crossbody Bags</a>
+                                                <a href="">Side Bags</a>
+                                                <a href="">Slides</a>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <img src="./Assets/img/Screenshot 2024-04-09 235422.png" class="w-100 "
+                                                    alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a class="dropdown-item mt-2 position-relative" href="#"><i
+                                        class="fa-solid fa-bicycle"></i><span class="ms-3 me-5">Bikes</span><i
+                                        class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a></li>
+                            <li><a class="dropdown-item mt-2 position-relative" href="#"><i
+                                        class="fa-solid fa-house"></i><span class="ms-3 me-5">Home & Garden</span><i
+                                        class="fa-solid fa-chevron-right ms-5 position-absolute"></i></a></li>
                             <li><a class="dropdown-item mt-2 " href="#"><i class="fa-solid fa-gift"></i><span
                                         class="ms-3 me-5">Gifts</span></a></li>
                             <li><a class="dropdown-item mt-2 " href="#"><i class="fa-solid fa-music"></i><span
@@ -175,71 +287,71 @@
                 <div class="bmenuright col-lg-8 d-flex justify-content-end align-items-center  ">
                     <div class="menuitem mx-3">
                         <a class="nav-link" href="#">Home</a>
-                    <ul class="menuhover">
-                        <li><a href="">Market1</a></li>
-                        <li><a href="">Market2</a></li>
-                        <li><a href="">Fashion1</a></li>
-                        <li><a href="">Fashion2</a></li>
-                        <li><a href="">Gift Shop</a></li>
-                        <li><a href="">Groceries1</a></li>
-                        <li><a href="">Groceries2</a></li>
-                        <li><a href="">Furniture Shop</a></li>
-                    </ul>
+                        <ul class="menuhover">
+                            <li><a href="">Market1</a></li>
+                            <li><a href="">Market2</a></li>
+                            <li><a href="">Fashion1</a></li>
+                            <li><a href="">Fashion2</a></li>
+                            <li><a href="">Gift Shop</a></li>
+                            <li><a href="">Groceries1</a></li>
+                            <li><a href="">Groceries2</a></li>
+                            <li><a href="">Furniture Shop</a></li>
+                        </ul>
                     </div>
                     <div class="menuitem mx-3">
                         <a class="nav-link" href="#">Pages</a>
-                    <ul class="menuhover">
-                        <li class="justify-content-between  d-flex align-items-center  position-relative ">Sale Page 
-                            <i class="fa-solid fa-caret-right ms-5  "></i>
-                            <ul class="limenuhover">
-                                <li ><a href="">Version1</a></li>
-                                <li><a href="">Version2</a></li>
-                            </ul>
-                        </li>
-                        <li class="justify-content-between  d-flex align-items-center position-relative ">Vendor
-                            <i class="fa-solid fa-caret-right ms-5  "></i>
-                            <ul class="limenuhover">
-                                <li ><a href="">All Vendors</a></li>
-                                <li><a href="">Vendor store</a></li>
-                            </ul>
-                        </li>
-                        <li class="justify-content-between  d-flex align-items-center position-relative ">Shop
-                            <i class="fa-solid fa-caret-right ms-5  "></i>
-                            <ul class="limenuhover">
-                                <li ><a href="">Search product</a></li>
-                                <li><a href="">Single product</a></li>
-                                <li><a href="">Cart</a></li>
-                                <li><a href="">Checkout</a></li>
-                                <li><a href="">Alternative Checkout</a></li>
-                            </ul>
-                        </li>
-                        <li class="justify-content-between  d-flex align-items-center position-relative ">Auth
-                            <i class="fa-solid fa-caret-right ms-5  "></i>
-                            <ul class="limenuhover">
-                                <li ><a href="">Version1</a></li>
-                                <li><a href="">Version2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <ul class="menuhover">
+                            <li class="justify-content-between  d-flex align-items-center  position-relative ">Sale Page
+                                <i class="fa-solid fa-caret-right ms-5  "></i>
+                                <ul class="limenuhover">
+                                    <li><a href="">Version1</a></li>
+                                    <li><a href="">Version2</a></li>
+                                </ul>
+                            </li>
+                            <li class="justify-content-between  d-flex align-items-center position-relative ">Vendor
+                                <i class="fa-solid fa-caret-right ms-5  "></i>
+                                <ul class="limenuhover">
+                                    <li><a href="">All Vendors</a></li>
+                                    <li><a href="">Vendor store</a></li>
+                                </ul>
+                            </li>
+                            <li class="justify-content-between  d-flex align-items-center position-relative ">Shop
+                                <i class="fa-solid fa-caret-right ms-5  "></i>
+                                <ul class="limenuhover">
+                                    <li><a href="">Search product</a></li>
+                                    <li><a href="">Single product</a></li>
+                                    <li><a href="">Cart</a></li>
+                                    <li><a href="">Checkout</a></li>
+                                    <li><a href="">Alternative Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="justify-content-between  d-flex align-items-center position-relative ">Auth
+                                <i class="fa-solid fa-caret-right ms-5  "></i>
+                                <ul class="limenuhover">
+                                    <li><a href="">Version1</a></li>
+                                    <li><a href="">Version2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div class="menuitem mx-3">
                         <a class="nav-link" href="#">User Account</a>
-                    <ul class="menuhover">
-                        <li>Orders</li>
-                        <li>Profile</li>
-                        <li>Address</li>
-                        <li>Support tickets</li>
-                        <li>Wishlist</li>
-                    </ul>
+                        <ul class="menuhover">
+                            <li>Orders</li>
+                            <li>Profile</li>
+                            <li>Address</li>
+                            <li>Support tickets</li>
+                            <li>Wishlist</li>
+                        </ul>
                     </div>
                     <div class="menuitem mx-3">
                         <a class="nav-link" href="#">Vendor Account</a>
-                    <ul class="menuhover">
-                        <li>Dashboard</li>
-                        <li>Products</li>
-                        <li>Orders</li>
-                        <li>Profile</li>
-                    </ul>
+                        <ul class="menuhover">
+                            <li>Dashboard</li>
+                            <li>Products</li>
+                            <li>Orders</li>
+                            <li>Profile</li>
+                        </ul>
                     </div>
                     <div class="menuitem mx-3">
                         <a class="nav-link" href="#">Track My Orders</a>
@@ -247,77 +359,198 @@
                     <div class="menuitem ms-3">
                         <a class="nav-link" href="#">Back to Demos </a>
                     </div>
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </header>
 
     <main>
-
+        <div class="your-class">
+         <div>  
+             <div class="slidebox">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-6">
+                <h1>50% Off For Your First Shopping</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam
+                    at quis ut convalliss.</p>
+                <button type="button" class="btn btn-danger">Shop now</button>
+            </div>
+            <div class="col-lg-2">
+                <img src="./Assets/img/apple-watch-0.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div>  
+        <div class="slidebox">
+           <div class="col-lg-4"></div>
+           <div class="col-lg-6">
+           <h1>50% Off For Your First Shopping</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam
+               at quis ut convalliss.</p>
+           <button type="button" class="btn btn-danger">Shop now</button>
+       </div>
+       <div class="col-lg-2">
+           <img src="./Assets/img/apple-watch-0.png" alt="">
+       </div>
+   </div>
+</div>
+        </div>
+        <div class="productslide1">
+           <div class="d-flex  align-items-center titleicons"> <i class="fa-solid fa-bolt" ></i>
+            <h3>Flash Deals</h3></div>
+            <div class="view position-absolute">
+                <span>View all</span>
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+            <div class="flashproducts d-flex flex-wrap">
+            </div>
+        </div>
+        <div class="productslide1">
+            <div class="d-flex  align-items-center titleicons">
+                 <i class="fa-solid fa-list"></i>
+             <h3>Top Categories</h3>
+            </div>
+            <div class="view position-absolute">
+                <span>View all</span>
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+             <div class="topproducts">
+              
+              </div>
+         </div>
+        
+         <div class="row col-12 ">
+            <div class="col-lg-6 position-relative ">
+                <div class="d-flex  align-items-center titleicons">
+                    <i class="fa-solid fa-certificate"></i>
+                    <h3>Top Ratings</h3>
+                </div>
+                    <div class="view position-absolute pt-2">
+                        <span>View all</span>
+                        <i class="fa-solid fa-caret-right"></i>
+                    </div>
+                    <div class="ratingbox w-100 d-flex p-2">
+                        <div class="ratingcard col-lg-3">
+                            <img src="./Assets/img/flash-1.webp" alt="">
+                            <div class="stars my-2">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <span>(13)</span>
+                                <h3>iphone</h3>
+                                <h5>$300</h5>
+                            </div>
+                        </div>
+                        <div class="ratingcard col-lg-3">
+                            <img src="./Assets/img/flash-1.webp" alt="">
+                            <div class="stars my-2">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <span>(13)</span>
+                                <h3>iphone</h3>
+                                <h5>$300</h5>
+                            </div>
+                        </div>
+                        <div class="ratingcard col-lg-3">
+                            <img src="./Assets/img/flash-1.webp" alt="">
+                            <div class="stars my-2">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <span>(13)</span>
+                                <h3>iphone</h3>
+                                <h5>$300</h5>
+                            </div>
+                        </div>
+                        <div class="ratingcard col-lg-3">
+                            <img src="./Assets/img/flash-1.webp" alt="">
+                            <div class="stars my-2">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <span>(13)</span>
+                                <h3>iphone</h3>
+                                <h5>$300</h5>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-6 position-relative ">
+                <div class="d-flex  align-items-center titleicons"> 
+                    <i class="fa-solid fa-star-of-david"></i>
+                    <h3>Featured Brands</h3>
+                </div>
+                    <div class="view position-absolute pt-2">
+                        <span>View all</span>
+                        <i class="fa-solid fa-caret-right"></i>
+                    </div>
+            </div>
+         </div>
     </main>
 
 
     <footer>
-            <div class="container d-flex flex-sm-wrap ">
-                <div class="col-lg-4 col-6 p-2  my-5 ">
-                    <a href=""><img src="./Assets/img/logo.svg" alt=""></a>
-                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in
-                        gravida. Sit
-                        diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
-                    <div class="applogo">
-                        <a href=""><img src="./Assets/img/google-play-badge.png" alt=""></a>
-                        <a href=""><img src="./Assets/img/Download on the App Store.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 p-2 my-5 ">
-                    <h3>About Us</h3>
-                    <a href="" class="d-block text-decoration-none mb-2">Careers</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Our Stores</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Our Cares</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Terms & Conditions</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Privacy Policy</a>
-                </div>
-                <div class="col-lg-3  col-6 p-2 my-5   ">
-                    <h3>Customer Care</h3>
-                    <a href="" class="d-block text-decoration-none mb-2">Help Center</a>
-                    <a href="" class="d-block text-decoration-none mb-2">How to Buy</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Track Your Order</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Corporate & Bulk Purchasing</a>
-                    <a href="" class="d-block text-decoration-none mb-2">Returns & Refunds</a>
-                </div>
-                <div class="col-lg-3  col-6 p-2 my-5">
-                    <h3>Contact Us</h3>
-                    <p>70 Washington Square South, New York, NY 10012, United States</p>
-                    <p>Email: uilib.help@gmail.com</p>
-                    <p>Phone: +1 1123 456 780</p>
-                    <div class="sosialicons mt-4">
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""><i class="fa-brands fa-youtube"></i></a>
-                       <a href=""> <i class="fa-brands fa-google"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    </div>
+        <div class="container d-flex flex-sm-wrap ">
+            <div class="col-lg-4 col-6 p-2  my-5 ">
+                <a href=""><img src="./Assets/img/logo.svg" alt=""></a>
+                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in
+                    gravida. Sit
+                    diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
+                <div class="applogo">
+                    <a href=""><img src="./Assets/img/google-play-badge.png" alt=""></a>
+                    <a href=""><img src="./Assets/img/Download on the App Store.png" alt=""></a>
                 </div>
             </div>
+            <div class="col-lg-2 col-6 p-2 my-5 ">
+                <h3>About Us</h3>
+                <a href="" class="d-block text-decoration-none mb-2">Careers</a>
+                <a href="" class="d-block text-decoration-none mb-2">Our Stores</a>
+                <a href="" class="d-block text-decoration-none mb-2">Our Cares</a>
+                <a href="" class="d-block text-decoration-none mb-2">Terms & Conditions</a>
+                <a href="" class="d-block text-decoration-none mb-2">Privacy Policy</a>
+            </div>
+            <div class="col-lg-3  col-6 p-2 my-5   ">
+                <h3>Customer Care</h3>
+                <a href="" class="d-block text-decoration-none mb-2">Help Center</a>
+                <a href="" class="d-block text-decoration-none mb-2">How to Buy</a>
+                <a href="" class="d-block text-decoration-none mb-2">Track Your Order</a>
+                <a href="" class="d-block text-decoration-none mb-2">Corporate & Bulk Purchasing</a>
+                <a href="" class="d-block text-decoration-none mb-2">Returns & Refunds</a>
+            </div>
+            <div class="col-lg-3  col-6 p-2 my-5">
+                <h3>Contact Us</h3>
+                <p>70 Washington Square South, New York, NY 10012, United States</p>
+                <p>Email: uilib.help@gmail.com</p>
+                <p>Phone: +1 1123 456 780</p>
+                <div class="sosialicons mt-4">
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href=""> <i class="fa-brands fa-google"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
-
-
-
-
-        
-
-
-
-
-
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src="./Assets/slick-1.8.1/slick/slick.min.js"></script>
     <script src="./Assets/js/script.js"></script>
 </body>
 

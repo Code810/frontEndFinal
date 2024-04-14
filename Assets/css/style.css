@@ -179,3 +179,193 @@ footer h3{
 .dropdown-item>i{
     right: 20px;
 }
+.menuboxf{
+    position: absolute;
+    display: flex;
+    background-color: white;
+    left: 101%;
+    width: 800px;
+    padding: 20px;
+    top: 0%;
+    display: none;
+}
+.menuboxf a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding-bottom: 6px;
+}
+.fmenulist:hover .menuboxf{
+    display: block;
+}
+.menuboxf a:hover{
+    background-color: #f6f9fc;
+}
+.slidebox{
+    display: flex;
+    padding-top: 50px;
+}
+.slidebox h1{
+    font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.slidebox p{
+  margin-bottom: 30px;
+}
+.slidebox button{
+    margin-bottom: 30px;
+    width: 120px !important;
+    background-color: rgb(233, 69, 96);
+    color: white;
+  }
+.slidebox img{
+    width: 100%;
+}
+.productslide1{
+    background-color: #f6f9fc;
+    position: relative;
+    
+}
+.productslide1 .slick-dots{
+    background-color: #f6f9fc;
+}
+.titleicons h3{
+    font-weight: 700;
+    margin-top: 45px;
+}
+.titleicons>i{
+    color: #e94661;
+    font-size: 22px;
+    margin-right: 20px;
+    margin-left: 40px;
+    margin-top: 40px;
+    font-weight: 700;
+  
+}
+.cardbox{
+background-color: white;
+padding: 20px;
+margin: 15px;
+}
+.cardbox h3{
+    font-size: 15px;
+    font-weight: 600;
+}
+.stars i{
+color: #ffcd4e;
+font-size: 14px;
+}
+.pricebox h3:first-child{
+    color: #e94661;
+}
+.pricebox h3:last-child{
+    text-decoration: line-through;
+    color: #7d879c;
+}
+.discountPercentage{
+    background-color: #e94560;
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 40px;
+    padding: 2px 10px;
+}
+.addbasketbox{
+position: absolute;
+bottom: 20px;
+right: 14px;
+}
+.addbasketbox i{
+    color: #e94560;
+    border: 1px solid #e94560;
+    border-radius: 3px;
+    padding: 4px;
+    cursor: pointer;
+}
+.addbasketbox i:hover{
+    background-color: #e94560;
+    color: white;
+}
+.hovericons i{
+    font-size: 19px;
+    margin-bottom: 7px;
+    text-align: center;
+    color: #0f3460;
+   
+}
+.hovericons{
+    position: absolute;
+    right: 14px;
+    display: none;
+}
+.cardbox:hover .hovericons{
+    display: block;
+}
+.cardbox img{
+    width: 100% ;
+    height: 100%;
+    object-fit: cover;
+}
+.cardimg{
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+.productcards p:first-child{
+position: absolute;
+font-size: 10px;
+color: white;
+font-weight: 700;
+background-color: rgb(15, 52, 96);
+border-radius: 30px;
+top: 4px;
+left: 8px;
+padding: 5px;
+
+}
+.productcards p:last-child{
+    position: absolute;
+    font-size: 10px;
+    color: black;
+    font-weight: 700;
+    background-color: rgb(227, 233, 239);
+    border-radius: 30px;
+    top: 4px;
+    right: 8px;
+    padding: 5px;
+    }
+.topimages img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 20px 0;
+}
+.productcards{
+position: relative;
+padding: 20px;
+width: 360px !important;
+margin: 20px;
+background-color: white;
+}
+.topimagesw{
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+.view{
+    right: 30px;
+    top: 40px;
+    color: gray;
+    cursor: pointer;
+}
+.ratingcard{
+    text-align: center;
+    width: 23%;
+    margin-left: 15px;
+}
+.ratingcard img{
+    width: 100%;
+}
