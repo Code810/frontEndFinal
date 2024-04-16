@@ -1,0 +1,39 @@
+.btnimage{
+    width: 160px;
+    height: 80px;
+}
+.btnimage img{
+    background-color: white;
+    margin-left: 6px;
+    border-radius: 10px;
+}
+.colorbtn{
+    color: rgb(233, 69, 96);
+    border-bottom: 3px solid rgb(233, 69, 96);
+}
+.descmenuarea h5{
+    cursor: pointer;
+}
+.starsarea{
+    cursor: pointer;
+}
+.textarearating{
+    display: block;
+    padding: 8px 12px;
+    min-height: 40px;
+    font-size: inherit;
+    color: rgb(43, 52, 69);
+    border-radius: 5px;
+    border: 1px solid rgb(218, 225, 231);
+    width: 100%;
+    outline: none;
+    overflow: auto;
+    font-family: inherit;
+}
+.equalbox{
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgb(180, 180, 180);
+    margin-left: 10px;
+    padding-top: 100px;
+}
