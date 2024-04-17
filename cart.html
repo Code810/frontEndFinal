@@ -15,17 +15,19 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./Assets/slick-1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="./Assets/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="./Assets/css/product.css">
+    <link href="http://cdn.syncfusion.com/24.2.3/js/web/flat-azure/ej.web.all.min.css"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="./Assets/css/cart.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
     <title>Document</title>
 </head>
 
-<body>
+<body >
     <header>
         <nav class="navbar navbar-expand-lg navbartop z-3 ">
             <div class="container">
                 <div class="navbartopleft col-lg-6 d-flex text-white  align-items-center">
-                    <img src="./Assets/img/logo.svg" alt="" class="d-lg-none d-block">
+                   <a href="./index.html"> <img src="./Assets/img/logo.svg" alt="" class="d-lg-none d-block"></a>
                     <div class="d-none d-lg-block">
                         <i class="fa-solid fa-phone pe-1"></i>
                         <span class="pe-2">+994555111552</span>
@@ -85,7 +87,7 @@
             <div class="navbar navbar-expand-lg navbarmedium bg-white z-2 ">
                 <div class="container align-items-cente">
                     <div class="col-lg-2">
-                        <img src="./Assets/img/logo.svg" alt="" class="d-none d-lg-block ">
+                        <a href="./index.html"><img src="./Assets/img/logo.svg" alt="" class="d-none d-lg-block "></a>
                     </div>
                     <div class="col-lg-7 col-sm-10 col">
                         <div class="position-relative">
@@ -368,212 +370,91 @@
         </div>
         </div>
     </header>
-    <main>
-        <div class="productarea d-flex ">
-            <div class="col-lg-6 col-12">
-                <div class="primage w-100 customcontainer my-1">
-                    <img src="./Assets/img/1.Ford2019.png" alt="">
-                </div>
-                <div class="btnimage d-flex justify-content-center mx-auto ">
-                    <img src="./Assets/img/1.Ford2019.png" alt="">
-                    <img src="./Assets/img/1.Ford2019.png" alt="">
-                </div>
+    <main >
+      <div class="cardpage mb-4 ">
+        <div class="cardheader col-lg-9 customcontainer d-flex align-items-center my-5 ps-5 ">
+            <div class="cartbtn">
+                1.Cart
             </div>
-            <div class="col-lg-6 col-12 p-5 ">
-                <h3>iphone</h3>
-                <p>Brand: ziomi</p>
-
-                <div class="stars my-2">
-                    <span>Rated</span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <span>(50)</span>
-                </div>
-                <div class="pricebox d-flex gap-3">
-                    <h3>$300</h3>
-                    <h3>$399</h3>
-                </div>
-                <p>Stock available</p>
-                <button type="button" class="btn btn-danger my-3 ">Ad to Cart</button>
-                <P>Sold By: Mobile Store</P>
+            <div class="carthr"></div>
+            <div class="cartbtn2">
+                2.Details
+            </div>
+            <div class="carthr"></div>
+            <div class="cartbtn2">
+                3.Payment
+            </div>
+            <div class="carthr"></div>
+            <div class="cartbtn2">
+                4.Review
             </div>
         </div>
-        <div class="descriptionarea  p-5">
-            <div class="descmenuarea d-flex gap-3 border-bottom ">
-                <h5 class="descbtn colorbtn">Description</h5>
-                <h5 class="reviewbtn">Review</h5>
+        <div  class="basketarea customcontainer d-lg-flex gap-3">
+            <div class="col-lg-8 cartareabox">
+              
             </div>
-            <div class="specification col-lg-4 d-block ">
-                <span>Specification:</span>
-                <p> Brand: Beats
-                    Model: S450
-                    Wireless Bluetooth Headset
-                    FM Frequency Response: 87.5 – 108 MHz
-                    Feature: FM Radio, Card Supported (Micro SD / TF)
-                    Made in China</p>
+            <div class="col-lg-4 p-4 bg-white ">
+                <div class="total d-flex justify-content-between">
+                    <p class="text-secondary fw-semibold">Total:</p>
+                    <p class="fw-semibold">$ 460</p>
+                </div>
+                <div class="texthrline"></div>
+                <div class="totaltext mt-4">
+                    <span>Additional Comments</span>
+                    <span class="notetxt">Note</span>
+                    <textarea class="totaltextarea mt-4 " id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="texthrline my-3 "></div>
+                <input placeholder="Voucher" class="textinptarea" id="0.0667394996556736">
+                <button color="primary" class="textapplybtn">Apply Voucher</button>
+                <div class="texthrline my-3 "></div>
+                <p>Shipping Estimates</p>
+                <p>Country</p>
+                <div data-id="myDropdown1" class="dropsearch position-relative mb-3">
+                    <input type="search" placeholder="Select Country" id="myInput1" onkeyup="filterFunction1()">
+                    <div class="dropdown">
+                        <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
+                        <div id="myDropdown1" class="dropdown-content">
+                          <a href="#about">Azerbaijan</a>
+                          <a href="#base">Turkey</a>
+                          <a href="#blog">America</a>
+                          <a href="#contact">England</a>
+                          <a href="#custom">Georgy</a>
+                          <a href="#support">Germany</a>
+                          <a href="#tools">Chin</a>
+                        </div>
+                      </div>
+                </div>
+                <p>State</p>
+                <div data-id="myDropdown2" class="dropsearch position-relative mb-3">
+                    <input type="search" placeholder="Select State" id="myInput2" onkeyup="filterFunction2()">
+                    <div class="dropdown">
+                        <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
+                        <div id="myDropdown2" class="dropdown-content">
+                          <a href="#about">Azerbaijan</a>
+                          <a href="#base">Turkey</a>
+                          <a href="#blog">America</a>
+                          <a href="#contact">England</a>
+                          <a href="#custom">Georgy</a>
+                          <a href="#support">Germany</a>
+                          <a href="#tools">Chin</a>
+                        </div>
+                      </div>
+                </div>
+                <p>Zip Code</p>
+                <div data-id="myDropdown3" class="dropsearch position-relative mb-3">
+                <input type="text" placeholder="3100" id="myInput3" >
             </div>
-            <div class="review  d-none">
-                <div class="reviewcard my-5 ">
-                    <div class="singlereview col-lg-4 d-flex">
-                        <div class="profimg me-3 ">
-                            <img src="./Assets/img/profil7.png" alt="">
-                        </div>
-                        <div class="reviewrate">
-                            <div class="stars my-2">
-                                <h4>Jannie Schumm</h4>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <span class="mx-3 ">4.7</span>
-                                <span>3.3 years ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius massa id ut mattis. Facilisis
-                            vitae gravida egestas ac account.</p>
-                    </div>
-                </div>
-                <div class="reviewcard me-5">
-                    <div class="singlereview col-lg-4 d-flex">
-                        <div class="profimg me-3 ">
-                            <img src="./Assets/img/profil6.png" alt="">
-                        </div>
-                        <div class="reviewrate">
-                            <div class="stars my-2">
-                                <h4>Jannie Schumm</h4>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <span class="mx-3 ">4.7</span>
-                                <span>3.3 years ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius massa id ut mattis. Facilisis
-                            vitae gravida egestas ac account.</p>
-                    </div>
-                </div>
-                <div class="reviewcard me-5">
-                    <div class="singlereview col-lg-4 d-flex">
-                        <div class="profimg me-3 ">
-                            <img src="./Assets/img/prof8.png" alt="">
-                        </div>
-                        <div class="reviewrate">
-                            <div class="stars my-2">
-                                <h4>Jannie Schumm</h4>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <span class="mx-3 ">4.7</span>
-                                <span>3.3 years ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius massa id ut mattis. Facilisis
-                            vitae gravida egestas ac account.</p>
-                    </div>
-                </div>
-                <div class="ratemesagearea my-5">
-                    <h1>Write a Review for this product</h1>
-                    <div class="textarea d-flex align-items-center gap-2">
-                        <span>Your Rating</span>
-                        <i class="fa-solid fa-asterisk text-danger"></i>
-                    </div>
-                    <div class="stars py-3 starsarea">
-                        <i id="1" class="fa-regular fa-star"></i>
-                        <i id="2" class="fa-regular fa-star"></i>
-                        <i id="3" class="fa-regular fa-star"></i>
-                        <i id="4" class="fa-regular fa-star"></i>
-                        <i id="5" class="fa-regular fa-star"></i>
-                    </div>
-                    <div class="textarea d-flex align-items-center gap-2 mb-3 ">
-                        <span>Your Review</span>
-                        <i class="fa-solid fa-asterisk text-danger"></i>
-                    </div>
-                    <textarea name="" id="" cols="30" rows="10" class="textarearating"></textarea>
-                    <button type="submit" class="btn btn-secondary textareabtn my-2 ">Danger</button>
+            <button color="primary" class="textapplybtn">Caculate Shipping</button>
 
-                </div>
-                <div class="productoffer d-lg-block d-none">
-                    <h1>Frequently Bought Together</h1>
-                    <div class="box d-flex align-items-center my-3 ">
-                        <div class="bigdisccard col-lg-2 bg-white mx-2 p-3">
-                            <div class="bigdiscimg">
-                                <img src="./Assets/img/t2.webp" alt="" class="w-100 ">
-                            </div>
-                            <div class="my-2">
-                                <h3 class="my-2 overflow-hidden text-nowrap">Premium Grocery</h3>
-                                <div class="pricebox d-flex gap-3 mt-3 ">
-                                    <h3>$222</h3>
-                                    <h3>$250</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                        <div class="bigdisccard col-lg-2 bg-white mx-2 p-3">
-                            <div class="bigdiscimg">
-                                <img src="./Assets/img/t2.webp" alt="" class="w-100 ">
-                            </div>
-                            <div class="my-2">
-                                <h3 class="my-2 overflow-hidden text-nowrap">Premium Grocery</h3>
-                                <div class="pricebox d-flex gap-3 mt-3 ">
-                                    <h3>$222</h3>
-                                    <h3>$250</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                        <div class="bigdisccard col-lg-2 bg-white mx-2 p-3">
-                            <div class="bigdiscimg">
-                                <img src="./Assets/img/t2.webp" alt="" class="w-100 ">
-                            </div>
-                            <div class="my-2">
-                                <h3 class="my-2 overflow-hidden text-nowrap">Premium Grocery</h3>
-                                <div class="pricebox d-flex gap-3 mt-3 ">
-                                    <h3>$222</h3>
-                                    <h3>$250</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-plus"></i>
-                        <div class="bigdisccard col-lg-2 bg-white mx-2 p-3">
-                            <div class="bigdiscimg">
-                                <img src="./Assets/img/t2.webp" alt="" class="w-100 ">
-                            </div>
-                            <div class="my-2">
-                                <h3 class="my-2 overflow-hidden text-nowrap">Premium Grocery</h3>
-                                <div class="pricebox d-flex gap-3 mt-3 ">
-                                    <h3>$222</h3>
-                                    <h3>$250</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-equals"></i>
-                        <div class="col-lg-4 equalbox text-center">
-                            <h3 class="text-danger">$2500</h3>
-                            <p>Save $500</p>
-                            <div class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-danger me-4 ">Danger</button>
-                                <button type="button" class="btn btn-outline-danger ">Danger</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <button color="primary" class=" checkout">Caculate Shipping</button>
+
+                
+
+
             </div>
         </div>
-
+      </div>
     </main>
     <footer>
         <div class="container d-flex flex-sm-wrap ">
@@ -619,7 +500,11 @@
         </div>
     </footer>
 
+    <script src="http://cdn.syncfusion.com/js/assets/external/jquery-1.11.3.min.js"></script>
 
+    <script src="http://cdn.syncfusion.com/js/assets/external/jquery.easing.1.3.min.js"></script>
+
+    <script src="http://cdn.syncfusion.com/24.2.3/js/web/ej.web.all.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -627,9 +512,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
     <script src="./Assets/slick-1.8.1/slick/slick.min.js"></script>
-    <script src="./Assets/js/product.js"></script>
     <script src="./Assets/js/cart.js"></script>
     <script src="./Assets/js/script.js"></script>
+
 </body>
 
 </html>

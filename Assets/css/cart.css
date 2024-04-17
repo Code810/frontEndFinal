@@ -1,0 +1,212 @@
+.cartbtn{
+    display: inline-flex;
+    border-radius: 300px;
+    transition: all 150ms ease-in-out 0s;
+    cursor: pointer;
+    box-shadow: unset;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    background-color: rgb(233, 69, 96);
+    font-size: 14px;
+    font-weight: 600;
+}
+.carthr{
+    cursor: unset;
+    box-shadow: none;
+    width: 50px;
+    height: 4px;
+    background-color: rgb(255, 225, 230);
+}
+.cartbtn2{
+    display: inline-flex;
+    border-radius: 300px;
+    transition: all 150ms ease-in-out 0s;
+    cursor: pointer;
+    box-shadow: unset;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0.5rem 1.5rem;
+    color: rgb(233, 69, 96);
+    background-color: rgb(255, 225, 230);
+    font-size: 14px;
+    font-weight: 600;
+}
+.singlepr{
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 26px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 1.5rem;
+    padding: 10px;
+}
+.singlepr img{
+    width: 140px;
+    aspect-ratio: auto 140 / 140;
+    height: 140px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+.cartprinfo h5{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+.countprbox{
+    right: 30px;
+    bottom: 20px;
+}
+.countprbox span{
+    margin: 0 8px;
+}
+.countprbox i{
+    padding: 6px;
+    border: 1px solid rgb(233, 69, 96);
+    border-radius: 5px;
+    color: rgb(233, 69, 96);
+}
+.closebtn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 20px;
+}
+.totaltextarea{
+    display: block;
+    padding: 8px 12px;
+    min-height: 40px;
+    font-size: inherit;
+    color: rgb(43, 52, 69);
+    border-radius: 5px;
+    border: 1px solid rgb(218, 225, 231);
+    width: 100%;
+    outline: none;
+    overflow: auto;
+    font-family: inherit;
+    height: 150px;
+}
+.notetxt{
+    color: rgb(233, 69, 96);
+    font-size: 12px;
+    cursor: unset;
+    box-shadow: none;
+    padding: 3px 10px;
+    background-color: rgb(255, 225, 230);
+    border-radius: 3px;
+}
+.texthrline{
+    height: 1px;
+    background-color: rgb(243, 245, 249);
+    margin-bottom: 1rem;
+}
+.textinptarea{
+    padding: 8px 12px;
+    height: 40px;
+    font-size: inherit;
+    color: rgb(43, 52, 69);
+    border-radius: 5px;
+    border: 1px solid rgb(218, 225, 231);
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+}
+.textapplybtn{
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    background: white;
+    transition: all 150ms ease-in-out 0s;
+    padding: 10px 16px;
+    color: rgb(233, 69, 96);
+    border: 1px solid rgb(233, 69, 96);
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 30px;
+}
+.checkout{
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: rgb(233, 69, 96);
+    color: rgb(255, 255, 255);
+    transition: all 150ms ease-in-out 0s;
+    padding: 10px 16px;
+    border: 1px solid rgb(233, 69, 96);
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 30px;
+}
+.textapplybtn:hover{
+    background-color: rgb(233, 69, 96);
+    color: rgb(255, 255, 255);
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: rgb(131, 131, 131);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+.dropsearch{
+    border: 1px solid rgb(218, 225, 231);
+    height: 40px;
+    padding: 7px;
+    border-radius: 5px;
+}
+  #myInput1,#myInput2,#myInput3{
+    color: inherit;
+    background: 0px center;
+    opacity: 1;
+    width: 100%;
+    grid-area: 1 / 2;
+    font: inherit;
+    min-width: 2px;
+    border: 0px;
+    margin: 0px;
+    outline: 0px;
+    padding: 0px;
+  }
+  .colorchange{
+    border: 1px solid rgb(233, 69, 96) !important;
+  }
+  
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 40px;
+    bottom: 47px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 270px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    right: -39px;
+    top: 49px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}

@@ -616,3 +616,16 @@ margin-top: 40px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 3px;
 }
+#basketCount{
+    background-color: #ff003c;
+    border-radius: 34%;
+    color: white;
+    font-size: 10px;
+    width: 14px;
+    position: absolute;
+    font-weight: 700;
+    padding: 1px;
+    text-align: center;
+    right: 40px;
+    top: 6px;
+}
