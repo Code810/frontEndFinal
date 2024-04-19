@@ -15,19 +15,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./Assets/slick-1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="./Assets/slick-1.8.1/slick/slick.css">
-    <link href="http://cdn.syncfusion.com/24.2.3/js/web/flat-azure/ej.web.all.min.css"
-    rel="stylesheet" />
+    <link href="http://cdn.syncfusion.com/24.2.3/js/web/flat-azure/ej.web.all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./Assets/css/cart.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
     <title>Document</title>
 </head>
 
-<body >
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbartop z-3 ">
             <div class="container">
                 <div class="navbartopleft col-lg-6 d-flex text-white  align-items-center">
-                   <a href="./index.html"> <img src="./Assets/img/logo.svg" alt="" class="d-lg-none d-block"></a>
+                    <a href="./index.html"> <img src="./Assets/img/logo.svg" alt="" class="d-lg-none d-block"></a>
                     <div class="d-none d-lg-block">
                         <i class="fa-solid fa-phone pe-1"></i>
                         <span class="pe-2">+994555111552</span>
@@ -370,91 +369,200 @@
         </div>
         </div>
     </header>
-    <main >
-      <div class="cardpage mb-4 ">
-        <div class="cardheader col-lg-9 customcontainer d-flex align-items-center my-5 ps-5 ">
-            <div class="cartbtn">
-                1.Cart
+    <main>
+        <div class="cardpage mb-4 ">
+            <div class="cardheader col-lg-9 customcontainer d-flex align-items-center my-5 ps-5 ">
+                <div id="cart" class="cartbtn">
+                    1.Cart
+                </div>
+                <div class="carthr"></div>
+                <div id="details" class="cartbtn2">
+                    2.Details
+                </div>
+                <div class="carthr"></div>
+                <div class="cartbtn2">
+                    3.Payment
+                </div>
+                <div class="carthr"></div>
+                <div class="cartbtn2">
+                    4.Review
+                </div>
             </div>
-            <div class="carthr"></div>
-            <div class="cartbtn2">
-                2.Details
+            <div class="basketarea customcontainer d-lg-flex gap-3">
+                <div class="col-lg-8 cartareabox ">
+
+                </div>
+                <div class="col-lg-4 p-4 bg-white ">
+                    <div class="total d-flex justify-content-between">
+                        <p class="text-secondary fw-semibold">Total:</p>
+                        <p class="fw-semibold totalpricee"></p>
+                    </div>
+                    <div class="texthrline"></div>
+                    <div class="totaltext mt-4">
+                        <span>Additional Comments</span>
+                        <span class="notetxt">Note</span>
+                        <textarea class="totaltextarea mt-4 " id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="texthrline my-3 "></div>
+                    <input placeholder="Voucher" class="textinptarea" id="0.0667394996556736">
+                    <button color="primary" class="textapplybtn">Apply Voucher</button>
+                    <div class="texthrline my-3 "></div>
+                    <p>Shipping Estimates</p>
+                    <p>Country</p>
+                    <div data-id="myDropdown1" class="dropsearch position-relative mb-3">
+                        <input id="myInput1" class="myInput" type="search" placeholder="Select Country">
+                        <div class="dropdown">
+                            <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
+                            <div id="myDropdown1" class="dropdown-content">
+                                <a href="#about">Azerbaijan</a>
+                                <a href="#base">Turkey</a>
+                                <a href="#blog">America</a>
+                                <a href="#contact">England</a>
+                                <a href="#custom">Georgy</a>
+                                <a href="#support">Germany</a>
+                                <a href="#tools">Chin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>State</p>
+                    <div data-id="myDropdown2" class="dropsearch position-relative mb-3">
+                        <input type="search" placeholder="Select State" id="myInput2" class="myInput">
+                        <div class="dropdown">
+                            <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
+                            <div id="myDropdown2" class="dropdown-content">
+                                <a href="#about">Azerbaijan</a>
+                                <a href="#base">Turkey</a>
+                                <a href="#blog">America</a>
+                                <a href="#contact">England</a>
+                                <a href="#custom">Georgy</a>
+                                <a href="#support">Germany</a>
+                                <a href="#tools">Chin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Zip Code</p>
+                    <div data-id="myDropdown3" class="dropsearch position-relative mb-3">
+                        <input type="text" placeholder="3100" id="myInput3">
+                    </div>
+                    <button color="primary" class="textapplybtn">Caculate Shipping</button>
+
+                    <button color="primary" class=" checkout">Caculate Shipping</button>
+
+
+
+
+                </div>
             </div>
-            <div class="carthr"></div>
-            <div class="cartbtn2">
-                3.Payment
-            </div>
-            <div class="carthr"></div>
-            <div class="cartbtn2">
-                4.Review
+            <div class="detailsarea d-none customcontainer d-lg-flex gap-3 ">
+                <div class="col-lg-8">
+                    <div class="detailbox bg-white p-4">
+                        <h3>Shipping Address</h3>
+                        <div class="d-box d-flex gap-4 ">
+                            <div class="col-lg-5 ">
+                                <p>Full Name</p>
+                                <input type="text" class="forminput">
+                                <p>Phone Number</p>
+                                <input type="text" class="forminput">
+                                <p>Zip Code</p>
+                                <input type="text" class="forminput">
+                                <p>Address 1</p>
+                                <input type="text" class="forminput">
+                            </div>
+                            <div class="col-lg-5 ">
+                                <p>Email Address</p>
+                                <input type="text" class="forminput">
+                                <p>Company</p>
+                                <input type="text" class="forminput">
+                                <p>Country</p>
+                                <div data-id="myDropdown4" class="dropsearch position-relative mb-3">
+                                    <input id="myInput1" class="myInput" type="search" placeholder="Select Country">
+                                    <div class="dropdown">
+                                        <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
+                                        <div id="myDropdown4" class="dropdown-content">
+                                            <a href="#about">Azerbaijan</a>
+                                            <a href="#base">Turkey</a>
+                                            <a href="#blog">America</a>
+                                            <a href="#contact">England</a>
+                                            <a href="#custom">Georgy</a>
+                                            <a href="#support">Germany</a>
+                                            <a href="#tools">Chin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Address 2</p>
+                                <input type="text" class="forminput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detailbox bg-white p-4">
+                        <h3>Billing Address</h3>
+                        <p>Same as shipping address</p>
+                        <div class="d-box d-flex gap-4 ">
+                            <div class="col-lg-5 ">
+                                <p>Full Name</p>
+                                <input type="text" class="forminput">
+                                <p>Phone Number</p>
+                                <input type="text" class="forminput">
+                                <p>Zip Code</p>
+                                <input type="text" class="forminput">
+                                <p>Address 1</p>
+                                <input type="text" class="forminput">
+                            </div>
+                            <div class="col-lg-5 ">
+                                <p>Email Address</p>
+                                <input type="text" class="forminput">
+                                <p>Company</p>
+                                <input type="text" class="forminput">
+                                <p>Country</p>
+                                <div data-id="myDropdown5" class="dropsearch position-relative mb-3">
+                                    <input id="myInput1" class="myInput" type="search" placeholder="Select Country">
+                                    <div class="dropdown">
+                                        <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
+                                        <div id="myDropdown5" class="dropdown-content">
+                                            <a href="#about">Azerbaijan</a>
+                                            <a href="#base">Turkey</a>
+                                            <a href="#blog">America</a>
+                                            <a href="#contact">England</a>
+                                            <a href="#custom">Georgy</a>
+                                            <a href="#support">Germany</a>
+                                            <a href="#tools">Chin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Address 2</p>
+                                <input type="text" class="forminput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-5 ">
+                        <button color="primary" class="textapplybtn">Caculate Shipping</button>
+                        <button color="primary" class=" checkout">Caculate Shipping</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 p-5 bg-white text-end ">
+                    <div class="d-flex justify-content-between ">
+                        <p>Subtotal:</p>
+                        <b>$2610</b>
+                    </div>
+                    <div class="d-flex  justify-content-between">
+                        <p>Shipping:</p>
+                        <b>-</b>
+                    </div>
+                    <div class="d-flex  justify-content-between">
+                        <p>Tax:</p>
+                        <b>$40</b>
+                    </div>  
+                    <div class="d-flex  justify-content-between">
+                        <p>Discount:</p>
+                        <b>-</b>
+                    </div>
+                    <hr>
+                    <b>$2610</b>
+                    <input placeholder="Voucher" class="textinptarea mt-3 " id="0.0667394996556736">
+                    <button color="primary" class="textapplybtn">Apply Voucher</button>
+                </div>
             </div>
         </div>
-        <div  class="basketarea customcontainer d-lg-flex gap-3">
-            <div class="col-lg-8 cartareabox">
-              
-            </div>
-            <div class="col-lg-4 p-4 bg-white ">
-                <div class="total d-flex justify-content-between">
-                    <p class="text-secondary fw-semibold">Total:</p>
-                    <p class="fw-semibold">$ 460</p>
-                </div>
-                <div class="texthrline"></div>
-                <div class="totaltext mt-4">
-                    <span>Additional Comments</span>
-                    <span class="notetxt">Note</span>
-                    <textarea class="totaltextarea mt-4 " id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="texthrline my-3 "></div>
-                <input placeholder="Voucher" class="textinptarea" id="0.0667394996556736">
-                <button color="primary" class="textapplybtn">Apply Voucher</button>
-                <div class="texthrline my-3 "></div>
-                <p>Shipping Estimates</p>
-                <p>Country</p>
-                <div data-id="myDropdown1" class="dropsearch position-relative mb-3">
-                    <input type="search" placeholder="Select Country" id="myInput1" onkeyup="filterFunction1()">
-                    <div class="dropdown">
-                        <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
-                        <div id="myDropdown1" class="dropdown-content">
-                          <a href="#about">Azerbaijan</a>
-                          <a href="#base">Turkey</a>
-                          <a href="#blog">America</a>
-                          <a href="#contact">England</a>
-                          <a href="#custom">Georgy</a>
-                          <a href="#support">Germany</a>
-                          <a href="#tools">Chin</a>
-                        </div>
-                      </div>
-                </div>
-                <p>State</p>
-                <div data-id="myDropdown2" class="dropsearch position-relative mb-3">
-                    <input type="search" placeholder="Select State" id="myInput2" onkeyup="filterFunction2()">
-                    <div class="dropdown">
-                        <button class="dropbtn"><i class="fa-solid fa-chevron-down"></i></button>
-                        <div id="myDropdown2" class="dropdown-content">
-                          <a href="#about">Azerbaijan</a>
-                          <a href="#base">Turkey</a>
-                          <a href="#blog">America</a>
-                          <a href="#contact">England</a>
-                          <a href="#custom">Georgy</a>
-                          <a href="#support">Germany</a>
-                          <a href="#tools">Chin</a>
-                        </div>
-                      </div>
-                </div>
-                <p>Zip Code</p>
-                <div data-id="myDropdown3" class="dropsearch position-relative mb-3">
-                <input type="text" placeholder="3100" id="myInput3" >
-            </div>
-            <button color="primary" class="textapplybtn">Caculate Shipping</button>
-
-            <button color="primary" class=" checkout">Caculate Shipping</button>
-
-                
-
-
-            </div>
-        </div>
-      </div>
     </main>
     <footer>
         <div class="container d-flex flex-sm-wrap ">

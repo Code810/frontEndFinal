@@ -67,12 +67,14 @@
     border: 1px solid rgb(233, 69, 96);
     border-radius: 5px;
     color: rgb(233, 69, 96);
+    cursor: pointer;
 }
 .closebtn{
     position: absolute;
     right: 30px;
     top: 20px;
     font-size: 20px;
+    cursor: pointer;
 }
 .totaltextarea{
     display: block;
@@ -197,6 +199,7 @@
     border: 1px solid #ddd;
     z-index: 1;
     right: -39px;
+    max-height: 200px;
     top: 49px;
   }
   
@@ -210,3 +213,34 @@
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
+
+button:disabled .fa-minus{
+    background-color: rgb(218, 225, 231);
+    color: rgb(125, 135, 156);
+    border-color: rgb(218, 225, 231);
+    cursor: unset;
+  }
+.forminput{
+    padding: 8px 12px;
+    height: 40px;
+    font-size: inherit;
+    color: rgb(43, 52, 69);
+    border-radius: 5px;
+    border: 1px solid rgb(218, 225, 231);
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+}
+.detailbox p{
+    margin-bottom: 6px;
+    margin-top: 15px;
+    font-size: 0.875rem;
+}
+.dbox{
+flex-wrap: wrap;
+height: unset;
+margin: -0.875rem;
+}   
+.detailsarea .col-lg-4{
+    max-height: 410px;
+}

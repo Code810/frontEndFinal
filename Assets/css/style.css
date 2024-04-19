@@ -308,7 +308,7 @@ footer h3 {
 .cardbox {
     background-color: white;
     padding: 28px;
-    margin: 15px;
+    margin: 9px;
     border-radius: 13px;
     width: 30%;
     transition: .5s;
@@ -628,4 +628,78 @@ margin-top: 40px;
     text-align: center;
     right: 40px;
     top: 6px;
+}
+.result{
+    text-decoration: none;
+    display: block;
+    color: black;
+    cursor: pointer;
+  }
+  .result:hover{
+    background-color: #eeeeee;
+  }
+.cartfixedbox{
+    width: 380px;
+    right: 0;
+    top: 0px;
+    z-index: 1111;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+.backgroudcart{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.53);
+    right: 0;
+    top: 0px;
+    z-index: 111111111;
+    flex-direction: column;
+}
+.minicartimg img{
+    width: 100%;
+}
+.minicartinfo h4{
+    font-size: 16px;
+    font-weight: 700;
+}
+.minicartinfo p{
+    font-size: 10px;
+    margin: 0;
+}
+.minicartinfo span{
+    font-weight: 600;
+    color: red;
+}
+.minicartinfo{
+    padding-left: 5px;
+}
+.minicartinfo i{
+    top: 40px;
+    right: 10px;
+}
+.minicarticons i{
+    display: flex;
+    width: unset;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    background: transparent;
+    transition: all 150ms ease-in-out 0s;
+    line-height: 1;
+    color: rgb(233, 69, 96);
+    border: 1px solid rgb(255, 225, 230);
+    border-radius: 300px;
+    padding: 5px;
+}
+.minicarticons i:hover{
+    background-color: rgb(233, 69, 96);
+    border-color: rgb(233, 69, 96);
+    color: rgb(255, 255, 255);
+}
+.minicarticons h6{
+    margin-left: 9px;
 }

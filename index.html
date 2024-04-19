@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbartop z-3 ">
             <div class="container">
@@ -80,7 +81,7 @@
 
             </div>
         </nav>
-        <div >
+        <div>
             <div class="navbar navbar-expand-lg navbarmedium bg-white z-2 ">
                 <div class="container align-items-cente">
                     <div class="col-lg-2">
@@ -89,8 +90,9 @@
                     <div class="col-lg-7 col-sm-10 col">
                         <div class="position-relative">
                             <i class="fa-solid fa-magnifying-glass position-absolute searchicon"></i>
-                            <input type="text" class="form-control searchinpt my-2 col-sm-10 "
+                            <input type="text" id="searchInput" class="form-control searchinpt my-2 col-sm-10 "
                                 placeholder="Search and hit enter" aria-label="Text input with dropdown button">
+                            <div id="results" class="d-none "></div>
                             <button class="btn dropdown-toggle dropmenu d-none d-lg-block" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">All Categories</button>
                             <ul class="dropdown-menu dropdown-menu-end openmenu">
@@ -107,7 +109,7 @@
                     </div>
                     <div class="col-lg-2 d-flex navicons justify-content-end d-none d-lg-block position-relative ">
                         <a href=""><i class="fa-regular fa-user mx-4 p-3"></i></a>
-                        <a href="./cart.html"><i class="fa-solid fa-bag-shopping p-3"></i></a>
+                        <i class="fa-solid fa-bag-shopping cartbag p-3"></i>
                         <span id="basketCount" class="d-none "></span>
                     </div>
                 </div>
@@ -610,7 +612,7 @@
                     <span>View All Brands</span>
                 </div>
             </div>
-            <div class="col-lg-9 position-relative ">
+            <div class="col-lg-8 position-relative ">
                 <div class="d-flex  align-items-center titleicons"> <i class="fa-solid fa-bolt"></i>
                     <h3>Cars</h3>
                 </div>
@@ -681,7 +683,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 position-relative ">
+            <div class="col-lg-8 position-relative ">
                 <div class="d-flex  align-items-center titleicons">
                     <h3>Mobile Phones</h3>
                 </div>
@@ -757,7 +759,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 position-relative ">
+            <div class="col-lg-8 position-relative ">
                 <div class="d-flex  align-items-center titleicons">
                     <h3>Optics / Watch</h3>
                 </div>
@@ -882,9 +884,22 @@
                     <i class="fa-solid fa-bag-shopping p-3 d-block"></i>
                     <a>Account</a>
                 </div>
-              </div>
+            </div>
         </div>
-     
+        <div class="backgroudcart position-fixed d-none">
+            <div class="cartfixedbox position-fixed bg-white">
+                <div class="showinfo p-5">
+                    <i class="fa-solid fa-bag-shopping "></i>
+                    <span></span>
+                </div>
+                
+
+            </div>
+
+        
+
+        </div>
+
 
     </main>
     <footer>

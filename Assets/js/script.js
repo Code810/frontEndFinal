@@ -1,4 +1,9 @@
-$(document).ready(function () {
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
     chevron = $(".navbartopright i");
     chevron.on("click", function () {
         $(`#${$(this).attr("data-id")}`).toggle();
@@ -15,19 +20,16 @@ $(document).ready(function () {
         adaptiveHeight: true
     });
 
+
     fetch('https://dummyjson.com/products')
         .then(res => res.json())
         .then(res => {
-            let div = document.querySelector(".flashproducts");
-            let div2 = document.querySelector(".flashproducts2");
-            let topproducts = document.querySelector(".topproducts");
-            let bigdiscount = document.querySelector(".bigdiscountslide");
-            let carproducts = document.querySelector(".carproducts");
-            let mobilphones = document.querySelector(".mobilphones");
-            let optics = document.querySelector(".optics");
+            document.querySelector(".flashproducts2").innerHTML = ""
 
             for (let i = 0; i < 9; i++) {
-                div.innerHTML += `<div class="cardbox  col-4 col-lg-3 position-relative">
+
+                if (document.querySelector(".flashproducts")) {
+                    document.querySelector(".flashproducts").innerHTML += `<div class="cardbox  col-4 col-lg-3 position-relative">
          <div class="hovericons">
              <i class="fa-solid fa-eye d-block"></i>
              <i class="fa-regular fa-heart d-block "></i>
@@ -54,8 +56,10 @@ $(document).ready(function () {
              <i class="fa-solid fa-plus"></i>
          </div>
      </div> `
+                }
 
-                topproducts.innerHTML += `  <div class="productcards col-sm-12 col-lg-4">
+                if (document.querySelector(".topproducts")) {
+                    document.querySelector(".topproducts").innerHTML += `  <div class="productcards col-sm-12 col-lg-4">
      <p>${res.products[i].category}</p>
      <div class="topimages d-flex col-lg-12">
      <div class="topimagesw"> <img src="${res.products[i].images[0]}" alt=""></div>
@@ -64,20 +68,24 @@ $(document).ready(function () {
      </div>
      <p>3k orders this week</p>
  </div>`
+                }
 
-                bigdiscount.innerHTML += `  <div class="bigdisccard col-lg-2 bg-white mx-2 p-3">
- <div class="bigdiscimg"><img src="${res.products[i].images[0]}" alt=""></div>
- <div class="my-2">
-     <h3 class="my-2 overflow-hidden text-nowrap">${res.products[i].title}</h3>
-     <div class="pricebox d-flex gap-3 mt-3 ">
-             <h3 >$${(res.products[i].price - (res.products[i].price * res.products[i].discountPercentage) / 100).toFixed(2)}</h3>
-             <h3>$${res.products[i].price}</h3>
-         </div>
- </div>
-</div>`
+                if (document.querySelector(".bigdiscountslide")) {
+                    document.querySelector(".bigdiscountslide").innerHTML += `  <div class="bigdisccard col-lg-2 bg-white mx-2 p-3">
+    <div class="bigdiscimg"><img src="${res.products[i].images[0]}" alt=""></div>
+    <div class="my-2">
+        <h3 class="my-2 overflow-hidden text-nowrap">${res.products[i].title}</h3>
+        <div class="pricebox d-flex gap-3 mt-3 ">
+                <h3 >$${(res.products[i].price - (res.products[i].price * res.products[i].discountPercentage) / 100).toFixed(2)}</h3>
+                <h3>$${res.products[i].price}</h3>
+            </div>
+    </div>
+   </div>`
+                }
 
-                if (i < 6) {
-                    carproducts.innerHTML += `<div class="cardbox col-lg-4 col-6 position-relative ">
+
+                if (i < 6 && document.querySelector(".carproducts")) {
+                    document.querySelector(".carproducts").innerHTML += `<div class="cardbox col-lg-4 col-6 position-relative ">
 <div class="hovericons">
     <i class="fa-solid fa-eye d-block"></i>
     <i class="fa-regular fa-heart d-block "></i>
@@ -105,66 +113,68 @@ $(document).ready(function () {
 </div>
 </div> `
                 }
+                if (document.querySelector(".mobilphones")) {
+                    document.querySelector(".mobilphones").innerHTML += `<div class="cardbox col-lg-4 col-6 position-relative m-1">
+    <div class="hovericons">
+        <i class="fa-solid fa-eye d-block"></i>
+        <i class="fa-regular fa-heart d-block "></i>
+    </div>
+    <div class="discountPercentage">${res.products[i].discountPercentage}% off</div>
+    <div class="cardimg"> <img src="${res.products[i].images[0]}" alt=""></div>
+    <h3>${res.products[i].title}</h3>
+    <div class="stars my-2">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+    </div>
+    <div class="pricebox d-flex gap-3">
+        <h3 >$${(res.products[i].price - (res.products[i].price * res.products[i].discountPercentage) / 100).toFixed(2)}</h3>
+        <h3>$${res.products[i].price}</h3>
+    </div>
+    <div id="${res.products[i].id}d" class="addbasketbox text-center position-absolute" >
+     <div class="countbasket d-none">
+        <i class="fa-solid fa-minus mb-2"></i>
+        <h6></h6>
+     </div>
+        <i class="fa-solid fa-plus"></i>
+    </div>
+    </div> `
+                }
 
-                mobilphones.innerHTML += `<div class="cardbox col-lg-4 col-6 position-relative m-1">
-<div class="hovericons">
-    <i class="fa-solid fa-eye d-block"></i>
-    <i class="fa-regular fa-heart d-block "></i>
-</div>
-<div class="discountPercentage">${res.products[i].discountPercentage}% off</div>
-<div class="cardimg"> <img src="${res.products[i].images[0]}" alt=""></div>
-<h3>${res.products[i].title}</h3>
-<div class="stars my-2">
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-</div>
-<div class="pricebox d-flex gap-3">
-    <h3 >$${(res.products[i].price - (res.products[i].price * res.products[i].discountPercentage) / 100).toFixed(2)}</h3>
-    <h3>$${res.products[i].price}</h3>
-</div>
-<div id="${res.products[i].id}d" class="addbasketbox text-center position-absolute" >
- <div class="countbasket d-none">
-    <i class="fa-solid fa-minus mb-2"></i>
-    <h6></h6>
- </div>
-    <i class="fa-solid fa-plus"></i>
-</div>
-</div> `
-
-                optics.innerHTML += `<div class="cardbox col-lg-4 position-relative m-1">
-<div class="hovericons">
-    <i class="fa-solid fa-eye d-block"></i>
-    <i class="fa-regular fa-heart d-block "></i>
-</div>
-<div class="discountPercentage">${res.products[i].discountPercentage}% off</div>
-<div class="cardimg"> <img src="./Assets/img/${res.products[i].price}.webp" alt=""></div>
-<h3>${res.products[i].title}</h3>
-<div class="stars my-2">
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-</div>
-<div class="pricebox d-flex gap-3">
-    <h3 >$${(res.products[i].price - (res.products[i].price * res.products[i].discountPercentage) / 100).toFixed(2)}</h3>
-    <h3>$${res.products[i].price}</h3>
-</div>
-<div id="${res.products[i].id}f" class="addbasketbox text-center position-absolute" >
- <div class="countbasket d-none">
-    <i class="fa-solid fa-minus mb-2"></i>
-    <h6></h6>
- </div>
-    <i class="fa-solid fa-plus"></i>
-</div>
-</div> `
-
+                if (document.querySelector(".optics")) {
+                    document.querySelector(".optics").innerHTML += `<div class="cardbox col-lg-4 position-relative m-1">
+    <div class="hovericons">
+        <i class="fa-solid fa-eye d-block"></i>
+        <i class="fa-regular fa-heart d-block "></i>
+    </div>
+    <div class="discountPercentage">${res.products[i].discountPercentage}% off</div>
+    <div class="cardimg"> <img src="./Assets/img/${res.products[i].price}.webp" alt=""></div>
+    <h3>${res.products[i].title}</h3>
+    <div class="stars my-2">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+    </div>
+    <div class="pricebox d-flex gap-3">
+        <h3 >$${(res.products[i].price - (res.products[i].price * res.products[i].discountPercentage) / 100).toFixed(2)}</h3>
+        <h3>$${res.products[i].price}</h3>
+    </div>
+    <div id="${res.products[i].id}f" class="addbasketbox text-center position-absolute" >
+     <div class="countbasket d-none">
+        <i class="fa-solid fa-minus mb-2"></i>
+        <h6></h6>
+     </div>
+        <i class="fa-solid fa-plus"></i>
+    </div>
+    </div> `
+                }
 
                 if (i < 8) {
-                    div2.innerHTML += `<div class="cardbox  col-lg-3 col-6 position-relative ">
+                    document.querySelector(".flashproducts2").innerHTML += `<div class="cardbox  col-lg-3 col-6 position-relative ">
          <div class="hovericons">
              <i class="fa-solid fa-eye d-block"></i>
              <i class="fa-regular fa-heart d-block "></i>
@@ -193,6 +203,7 @@ $(document).ready(function () {
      </div> `
                 }
             }
+
             $('.bigdiscountslide').slick({
                 infinite: false,
                 speed: 300,
@@ -288,9 +299,11 @@ $(document).ready(function () {
             });
 
             let buttons = document.querySelectorAll(".fa-plus");
-            let basketCount = document.querySelector("#basketCount");
             buttons.forEach(button => {
-                button.onclick = function () {
+                button.onclick = function (e) {
+
+                    e.stopPropagation();
+
                     let productArr = [];
                     let productId = this.parentElement.getAttribute("id");
                     this.previousElementSibling.classList.remove("d-none");
@@ -323,7 +336,8 @@ $(document).ready(function () {
             });
             let minusbtn = document.querySelectorAll(".fa-minus");
             minusbtn.forEach(element => {
-                element.onclick = function () {
+                element.onclick = function (e) {
+                    e.stopPropagation();
                     productArr = JSON.parse(localStorage.getItem("basket"));
                     let productId = this.parentElement.parentElement.getAttribute("id");
                     let exsistProduct = productArr.find(pr => pr.id == productId);
@@ -343,45 +357,46 @@ $(document).ready(function () {
 
                 }
             });
+
+            let cardboxes = document.querySelectorAll(".cardbox");
+            cardboxes.forEach(element => {
+
+                element.onclick = function () {
+                    let product = {
+                        id: this.id,
+                        desc: this.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerText,
+                        price: this.lastElementChild.previousElementSibling.firstElementChild.innerText,
+                        price2: this.lastElementChild.previousElementSibling.lastElementChild.innerText,
+                        image: this.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.getAttribute("src")
+                    }
+                    localStorage.setItem("product", JSON.stringify(product));
+                    window.location.assign("./product.html")
+                }
+            });
+
+            let carticon = document.getElementsByClassName("fa-bag-shopping");
+            carticon[0].onclick = function () {
+               
+            }
+
             caculateCountBasket();
 
             function caculateCountBasket() {
+                let basketCount = document.querySelector("#basketCount");
+
                 let basket = JSON.parse(localStorage.getItem("basket"))
-                console.log();
-                let length = 0;
-                if (basket.length > 0) {
-                    length = basket.length;
-                    basketCount.innerText = length;
-                    basketCount.setAttribute("class", "d-block");
+                if (basket) {
+                    if (basket.length > 0) {
+                        basketCount.innerText = basket.length;;
+                        basketCount.setAttribute("class", "d-block");
+                    }
+                    else {
+                        localStorage.removeItem("basket");
+                        basketCount.removeAttribute("class", "d-block");
+                        basketCount.setAttribute("class", "d-none");
+                    }
                 }
-                else {
-                    localStorage.removeItem("basket");
-                    basketCount.removeAttribute("class", "d-block");
-                    basketCount.setAttribute("class", "d-none");
-                }
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         });
@@ -400,7 +415,44 @@ $(document).ready(function () {
         $(".menubtn span:first-child").attr("style", "color: #7d879c !important");
     })
 
-
+    let basket = JSON.parse(localStorage.getItem("basket"));
+    if (basket) {
+        document.querySelector(".showinfo").lastElementChild.innerText=`${basket.length} item`
+      basket.forEach(element => {
+        let disabled = "";
+        if (element.count < 2) {
+          disabled = "disabled";
+        }
+        if (document.querySelector(".cartfixedbox")) {
+          document.querySelector(".cartfixedbox").innerHTML += `<div  id="${element.id}" class="minicard p-4 d-flex border-bottom ">
+          <div class="minicarticons col-lg-1">
+          <i class="fa-solid fa-plus"></i>
+              <h6>${element.count}</h6>
+              <i class="fa-solid fa-minus mb-2"></i>
+          </div>
+          <div class="minicartimg col-lg-3">
+              <img src="${element.image}" alt="">
+          </div>
+          <div class="minicartinfo col-lg-8 position-relative p-2">
+              <h4>${element.desc}</h4>
+              <p>$${element.price} x ${element.count}</p>
+              <span>$${element.price*element.count} </span>
+              <i class="fa-solid fa-xmark position-absolute "></i>
+          </div>
+      </div>`
+        }
+     
+        totalPriceCaculate()
+      });
+    }
+    let backgroudcart=document.querySelector(".backgroudcart");
+   let cartbag=document.querySelector(".cartbag");
+cartbag.addEventListener("click", function() {
+    backgroudcart.classList.remove("d-none");
+})
+backgroudcart.addEventListener("click", function() {
+    backgroudcart.classList.add("d-none");
+})
 
 
     $(window).scroll(function () {
@@ -412,17 +464,52 @@ $(document).ready(function () {
             $(".navbarmedium").removeClass("fixedbar")
         }
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+fetch('https://dummyjson.com/products')
+    .then(res => res.json())
+    .then(res => {
+        const data = res.products;
+
+
+        const searchInput = document.getElementById('searchInput');
+        const resultsContainer = document.getElementById('results');
+
+        function displayResults(results) {
+            resultsContainer.innerHTML = ''; // Clear previous results
+            localStorage.setItem("search", JSON.stringify(results));
+            results.forEach(result => {
+                const resultElement = document.createElement('a');
+                resultElement.classList.add('result');
+                resultElement.textContent = result.title;
+                resultsContainer.appendChild(resultElement);
+            });
+        }
+
+        function filterResults(searchText) {
+            const filteredResults = data.filter(item => {
+                return item.title.toLowerCase().includes(searchText.toLowerCase()) || item.description.toLowerCase().includes(searchText.toLowerCase());
+            });
+
+            displayResults(filteredResults);
+        }
+        if (searchInput) {
+            searchInput.addEventListener('input', function (e) {
+                const searchText = this.value.trim(); // Trim whitespace from input
+                filterResults(searchText);
+                document.getElementById("results").classList.remove("d-none")
+                if (!this.value) {
+                    document.getElementById("results").classList.add("d-none")
+                }
+            });
+            searchInput.addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') {
+                    window.location.assign("./search.html")
+                }
+            });
+            displayResults(data);
+        }
+
+
+    })
+
