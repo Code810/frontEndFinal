@@ -77,3 +77,13 @@
 .widthimport{
     width: 99% !important;
 }
+.wishlist li{
+    list-style-type: none;
+}
+.wishlist a:hover{
+    border-left-color: rgb(233, 69, 96);
+    color: rgb(233, 69, 96) !important;
+}
+.wishlist{
+    max-height: 400px;
+}

@@ -9,15 +9,15 @@ $(document).ready(function () {
     let opticssearch = document.querySelector(".opticssearch");
     let pagination = document.querySelector(".pagination");
     let count = 2;
- 
     let searchproducts = JSON.parse(localStorage.getItem("search"));
     if (searchproducts) {
         for (let i = 8; i < searchproducts.length; i += 9) {
             pagination.innerHTML += `<button class="paginationbtn">${count}</button>`
             count++;
         }
+
     function getPr(n) {
-    
+   
             let sum = 0;
             for (let i = (n - 1) * 9; i < n * 9&&i<searchproducts.length; i++) {
                 sum++;
@@ -172,17 +172,17 @@ $(document).ready(function () {
 })
 
 
-let oddproduct = document.querySelector(".oddproduct");
-let evenproduct = document.querySelector(".evenproduct");
-oddproduct.onclick = () => {
-    for (const item of $(".cardbox")) {
-        item.classList.add("widthimport")
-    }
-}
-evenproduct.onclick = () => {
-    for (const item of $(".cardbox")) {
-        item.classList.remove("widthimport")
-    }
-}
+// let oddproduct = document.querySelector(".oddproduct");
+// let evenproduct = document.querySelector(".evenproduct");
+// oddproduct.onclick = () => {
+//     for (const item of $(".cardbox")) {
+//         item.classList.add("widthimport")
+//     }
+// }
+// evenproduct.onclick = () => {
+//     for (const item of $(".cardbox")) {
+//         item.classList.remove("widthimport")
+//     }
+// }
 
 

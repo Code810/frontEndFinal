@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ]
             });
 
-            let buttons = document.querySelectorAll(".fa-plus");
+            let buttons = document.querySelectorAll(".cardbox .fa-plus");
             buttons.forEach(button => {
                 button.onclick = function (e) {
 
@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     caculateCountBasket()
                 }
             });
-            let minusbtn = document.querySelectorAll(".fa-minus");
+            let minusbtn = document.querySelectorAll(".cardbox .fa-minus");
             minusbtn.forEach(element => {
                 element.onclick = function (e) {
                     e.stopPropagation();
@@ -415,20 +415,34 @@ document.addEventListener("DOMContentLoaded", function () {
         $(".menubtn span:first-child").attr("style", "color: #7d879c !important");
     })
 
+    
+    let backgroudcart=document.querySelector(".backgroudcart");
+   let cartbag=document.querySelector(".cartbag");
+cartbag.addEventListener("click", function() {
     let basket = JSON.parse(localStorage.getItem("basket"));
+    let fixedbox=document.querySelectorAll(".minicard");
+   if (document.querySelector(".buttonsincart")!=null) {
+    document.querySelector(".buttonsincart").remove();
+   }
+
+fixedbox.forEach(element => {
+   element.remove();
+});
     if (basket) {
         document.querySelector(".showinfo").lastElementChild.innerText=`${basket.length} item`
+    document.querySelector(".emptycart").classList.add("d-none");
+       
       basket.forEach(element => {
         let disabled = "";
         if (element.count < 2) {
           disabled = "disabled";
         }
         if (document.querySelector(".cartfixedbox")) {
-          document.querySelector(".cartfixedbox").innerHTML += `<div  id="${element.id}" class="minicard p-4 d-flex border-bottom ">
-          <div class="minicarticons col-lg-1">
-          <i class="fa-solid fa-plus"></i>
+          document.querySelector(".cartfixedbox").innerHTML += `<div  id="${element.id}" class="minicard p-3 d-flex border-bottom ">
+          <div class="minicarticons col-lg-1 me-2">
+          <i class="fa-solid fa-plus mb-2"></i>
               <h6>${element.count}</h6>
-              <i class="fa-solid fa-minus mb-2"></i>
+              <button class="border-0 bg-white minus" type="button" ${disabled}> <i  class="fa-solid fa-minus " ></i></button>
           </div>
           <div class="minicartimg col-lg-3">
               <img src="${element.image}" alt="">
@@ -436,23 +450,106 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="minicartinfo col-lg-8 position-relative p-2">
               <h4>${element.desc}</h4>
               <p>$${element.price} x ${element.count}</p>
-              <span>$${element.price*element.count} </span>
+              <span>$${(element.price*element.count).toFixed(2)} </span>
               <i class="fa-solid fa-xmark position-absolute "></i>
           </div>
       </div>`
         }
      
-        totalPriceCaculate()
       });
+if (document.querySelector(".buttonsincart")==null) {
+    document.querySelector(".cartfixedbox").innerHTML +=`  <div class="buttonsincart col-lg-11 m-auto ">
+    <button color="primary " class=" checkout">Checkout Now </button>
+   <a href="./cart.html"> <button color="primary" class="textapplybtn">View Cart</button> </a>
+   </div>`
+}
+   
+
+
+      let plusbtns = document.querySelectorAll(".minicard .fa-plus");
+      plusbtns.forEach(button => {
+    button.onclick = function (e) {
+
+        e.stopPropagation();
+
+        let productArr = [];
+        let productId = this.parentElement.parentElement.getAttribute("id");
+        if (localStorage.getItem("basket") != null) {
+            productArr = JSON.parse(localStorage.getItem("basket"));
+        }
+        let exsistProduct = productArr.find(pr => pr.id == productId);
+
+        if (exsistProduct) {
+            exsistProduct.count++;
+            this.nextElementSibling.innerText = exsistProduct.count;
+            this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerText=`${exsistProduct.price} x ${exsistProduct.count}`;
+            this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerText=`${(exsistProduct.price*exsistProduct.count).toFixed(2)}.`;
+
+        }
+        if (exsistProduct.count > 1) this.parentElement.firstElementChild.removeAttribute("disabled");
+        localStorage.setItem("basket", JSON.stringify(productArr));
     }
-    let backgroudcart=document.querySelector(".backgroudcart");
-   let cartbag=document.querySelector(".cartbag");
-cartbag.addEventListener("click", function() {
+});
+let minusbtn = document.querySelectorAll(".minicard .fa-minus");
+minusbtn.forEach(element => {
+  element.onclick = function (e) {
+    e.stopPropagation();
+
+    productArr = JSON.parse(localStorage.getItem("basket"));
+    let productId = this.parentElement.parentElement.parentElement.getAttribute("id");
+    let exsistProduct = productArr.find(pr => pr.id == productId);
+    if (exsistProduct && exsistProduct.count > 1) {
+      exsistProduct.count--;
+      this.parentElement.previousElementSibling.innerText = exsistProduct.count;
+      this.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerText=`${exsistProduct.price} x ${exsistProduct.count}`;
+      this.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerText=`${(exsistProduct.price*exsistProduct.count).toFixed(2)}.`;
+      localStorage.setItem("basket", JSON.stringify(productArr));
+    }
+    if (exsistProduct.count == 1) {
+      this.setAttribute("disabled", "")
+    }
+  
+  }
+});
+
+let closebtn = document.querySelectorAll(".minicard .fa-xmark");
+closebtn.forEach(element => {
+  element.onclick = function (e) {
+    e.stopPropagation();
+
+    productId = this.parentElement.parentElement.getAttribute("id");
+    productArr = JSON.parse(localStorage.getItem("basket")).filter(pr => pr.id != productId);
+    this.parentElement.parentElement.remove();
+    if (productArr.length == 0) {
+      localStorage.removeItem("basket");
+      document.querySelector(".buttonsincart").remove();
+      console.log(document.querySelector(".emptycart"));
+      document.querySelector(".emptycart").classList.remove("d-none");
+
+    }
+    else {
+        localStorage.setItem("basket", JSON.stringify(productArr));
+        document.querySelector(".emptycart").classList.add("d-none");
+    
+    }
+    document.querySelector(".showinfo").lastElementChild.innerText=`${productArr.length} item`
+  }
+});
+
+    }
+    else{
+        document.querySelector(".showinfo").lastElementChild.innerText=`0 item`
+        document.querySelector(".emptycart").classList.remove("d-none");
+
+    }
     backgroudcart.classList.remove("d-none");
 })
 backgroudcart.addEventListener("click", function() {
     backgroudcart.classList.add("d-none");
 })
+
+
+
 
 
     $(window).scroll(function () {

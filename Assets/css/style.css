@@ -645,7 +645,9 @@ margin-top: 40px;
     z-index: 1111;
     height: 100vh;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-y:scroll;
+    overflow-x:hidden;
 }
 .backgroudcart{
     width: 100%;
@@ -655,6 +657,12 @@ margin-top: 40px;
     top: 0px;
     z-index: 111111111;
     flex-direction: column;
+  
+}
+.minicartimg{
+    overflow: hidden;
+    object-fit: contain;
+
 }
 .minicartimg img{
     width: 100%;
@@ -702,4 +710,29 @@ margin-top: 40px;
 }
 .minicarticons h6{
     margin-left: 9px;
+}
+.showinfo i{
+    margin-top: 10px;
+    font-size: 25px;
+}
+.backgroudcart hr{
+    color: rgb(197, 197, 197);
+}
+.emptycart{
+    display: flex;
+    height: calc(100% - 80px);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.emptycart p{
+    margin-bottom: 0px;
+    margin-top: 1rem;
+    color: rgb(125, 135, 156);
+    max-width: 200px;
+    text-align: center;
+    font-size: 15px;
+}
+.emptycart img{
+    width: 20%;
 }
