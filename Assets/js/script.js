@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     let backgroudcart=document.querySelector(".backgroudcart");
    let cartbag=document.querySelector(".cartbag");
-cartbag.addEventListener("click", function() {
+cartbag?.addEventListener("click", function() {
     let basket = JSON.parse(localStorage.getItem("basket"));
     let fixedbox=document.querySelectorAll(".minicard");
    if (document.querySelector(".buttonsincart")!=null) {
@@ -523,7 +523,6 @@ closebtn.forEach(element => {
     if (productArr.length == 0) {
       localStorage.removeItem("basket");
       document.querySelector(".buttonsincart").remove();
-      console.log(document.querySelector(".emptycart"));
       document.querySelector(".emptycart").classList.remove("d-none");
 
     }
@@ -544,7 +543,7 @@ closebtn.forEach(element => {
     }
     backgroudcart.classList.remove("d-none");
 })
-backgroudcart.addEventListener("click", function() {
+backgroudcart?.addEventListener("click", function() {
     backgroudcart.classList.add("d-none");
 })
 
