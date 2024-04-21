@@ -9,7 +9,8 @@ $(document).ready(function () {
     let opticssearch = document.querySelector(".opticssearch");
     let pagination = document.querySelector(".pagination");
     let count = 2;
-    let searchproducts = JSON.parse(localStorage.getItem("search"));
+    let searchproducts = JSON.parse(localStorage.getItem("wishlist"));
+    console.log(searchproducts);
     if (searchproducts) {
         for (let i = 8; i < searchproducts.length; i += 9) {
             pagination.innerHTML += `<button class="paginationbtn">${count}</button>`
@@ -21,14 +22,14 @@ $(document).ready(function () {
             let sum = 0;
             for (let i = (n - 1) * 9; i < n * 9&&i<searchproducts.length; i++) {
                 sum++;
+             
                 opticssearch.innerHTML += `<div class="cardbox col-lg-4 position-relative m-1">
                     <div class="hovericons">
                         <i class="fa-solid fa-eye d-block"></i>
                         <i class="fa-regular fa-heart d-block "></i>
                     </div>
-                    <div class="discountPercentage">${searchproducts[i]?.discountPercentage}% off</div>
-                    <div class="cardimg"> <img src="${searchproducts[i]?.images[0]}" alt=""></div>
-                    <h3>${searchproducts[i]?.title}</h3>
+                    <div class="cardimg"> <img src="${searchproducts[i].image}" alt=""></div>
+                    <h3>${searchproducts[i].desc}</h3>
                     <div class="stars my-2">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -37,8 +38,7 @@ $(document).ready(function () {
                         <i class="fa-regular fa-star"></i>
                     </div>
                     <div class="pricebox d-flex gap-3">
-                        <h3 >$${(searchproducts[i]?.price - (searchproducts[i]?.price * searchproducts[i]?.discountPercentage) / 100).toFixed(2)}</h3>
-                        <h3>$${searchproducts[i]?.price}</h3>
+                        <h3 >$${searchproducts[i].price}</h3>
                     </div>
                     <div id="${searchproducts[i].id}" class="addbasketbox text-center position-absolute ">
                      <div class="countbasket d-none">
@@ -135,7 +135,7 @@ $(document).ready(function () {
                 let basket = JSON.parse(localStorage.getItem("basket"))
                 if (basket) {
                     if (basket.length > 0) {
-                        basketCount.innerText = basket.length;;
+                        basketCount.innerText = basket.length;
                         basketCount.setAttribute("class", "d-block");
                     }
                     else {
@@ -154,14 +154,14 @@ $(document).ready(function () {
 
     
     getPr(1);
-    let paginationbtn = document.querySelectorAll(".paginationbtn");
-    for (const element of paginationbtn) {
-        element.onclick = () => {
-            opticssearch.innerHTML = "";
-            getPr(element.textContent);
-        }
+    // let paginationbtn = document.querySelectorAll(".paginationbtn");
+    // for (const element of paginationbtn) {
+    //     element.onclick = () => {
+    //         opticssearch.innerHTML = "";
+    //         getPr(element.textContent);
+    //     }
 
-    }
+    // }
 
 
 

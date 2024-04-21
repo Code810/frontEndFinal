@@ -382,8 +382,7 @@ footer h3 {
     font-size: 19px;
     margin-bottom: 7px;
     text-align: center;
-    color: #0f3460;
-
+    cursor: pointer;
 }
 
 .hovericons {
@@ -735,4 +734,7 @@ margin-top: 40px;
 }
 .emptycart img{
     width: 20%;
+}
+.heartcolor{
+    color: #e94560;
 }

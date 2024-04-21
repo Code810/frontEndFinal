@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('https://dummyjson.com/products')
         .then(res => res.json())
         .then(res => {
-            document.querySelector(".flashproducts2").innerHTML = ""
 
             for (let i = 0; i < 9; i++) {
 
@@ -173,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div> `
                 }
 
-                if (i < 8) {
+                if (i < 8 && document.querySelector(".flashproducts2")) {
                     document.querySelector(".flashproducts2").innerHTML += `<div class="cardbox  col-lg-3 col-6 position-relative ">
          <div class="hovericons">
              <i class="fa-solid fa-eye d-block"></i>
@@ -374,10 +373,67 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            let carticon = document.getElementsByClassName("fa-bag-shopping");
-            carticon[0].onclick = function () {
-               
+            let wishbutton = $(".fa-heart");
+            for (let i = 0; i < wishbutton.length; i++) {
+                wishbutton[i].ondblclick = function (e) {
+                    window.location.assign("./wishlist.html")
+                }
+                wishbutton[i].onclick = function (e) {
+                    e.stopPropagation();
+                    console.log();
+                    wishbutton[i].classList.toggle("heartcolor");
+                    wishbutton[i].classList.toggle("fa-regular");
+                    wishbutton[i].classList.toggle("fa-solid");
+                    let productArr = [];
+                    let productId = this.parentElement.parentElement.lastElementChild.getAttribute("id");
+
+                    if (JSON.parse(localStorage.getItem("wishlist"))) {
+                        productArr = JSON.parse(localStorage.getItem("wishlist"));
+                        let exsistProduct = productArr.find(pr => pr.id == productId);
+                        if (exsistProduct) {
+                            productArr = productArr.filter(pr => pr.id != productId)
+                            localStorage.setItem("wishlist", JSON.stringify(productArr));
+                            if (productArr.length == 0) {
+                                localStorage.removeItem("wishlist");
+                            }
+                        }
+                        else {
+                            let product = {
+                                id: productId,
+                                desc: this.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.innerText,
+                                price: this.parentElement.parentElement.lastElementChild.previousElementSibling.firstElementChild.innerText.split("$")[1],
+                                image: this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.getAttribute("src")
+                            }
+                            productArr.push(product);
+                            localStorage.setItem("wishlist", JSON.stringify(productArr));
+                        }
+                    }
+                    else {
+                        let product = {
+                            id: productId,
+                            desc: this.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.innerText,
+                            price: this.parentElement.parentElement.lastElementChild.previousElementSibling.firstElementChild.innerText.split("$")[1],
+                            image: this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.getAttribute("src")
+                        }
+                        productArr.push(product);
+                        localStorage.setItem("wishlist", JSON.stringify(productArr));
+                    }
+
+
+                }
             }
+
+            let wishlist = JSON.parse(localStorage.getItem("wishlist"));
+            if (wishlist) {
+               wishlist.forEach(element => {
+                 let item=this.getElementById(`${element.id}`);
+                 item.parentElement.firstElementChild.lastElementChild.classList.remove("fa-regular");
+                 item.parentElement.firstElementChild.lastElementChild.classList.add("fa-solid");
+                 item.parentElement.firstElementChild.lastElementChild.classList.add("heartcolor");
+
+               });
+            }
+
 
             caculateCountBasket();
 
@@ -385,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let basketCount = document.querySelector("#basketCount");
 
                 let basket = JSON.parse(localStorage.getItem("basket"))
-                if (basket) {
+                if (basket && basketCount) {
                     if (basket.length > 0) {
                         basketCount.innerText = basket.length;;
                         basketCount.setAttribute("class", "d-block");
@@ -415,30 +471,30 @@ document.addEventListener("DOMContentLoaded", function () {
         $(".menubtn span:first-child").attr("style", "color: #7d879c !important");
     })
 
-    
-    let backgroudcart=document.querySelector(".backgroudcart");
-   let cartbag=document.querySelector(".cartbag");
-cartbag?.addEventListener("click", function() {
-    let basket = JSON.parse(localStorage.getItem("basket"));
-    let fixedbox=document.querySelectorAll(".minicard");
-   if (document.querySelector(".buttonsincart")!=null) {
-    document.querySelector(".buttonsincart").remove();
-   }
 
-fixedbox.forEach(element => {
-   element.remove();
-});
-    if (basket) {
-        document.querySelector(".showinfo").lastElementChild.innerText=`${basket.length} item`
-    document.querySelector(".emptycart").classList.add("d-none");
-       
-      basket.forEach(element => {
-        let disabled = "";
-        if (element.count < 2) {
-          disabled = "disabled";
+    let backgroudcart = document.querySelector(".backgroudcart");
+    let cartbag = document.querySelector(".cartbag");
+    cartbag?.addEventListener("click", function () {
+        let basket = JSON.parse(localStorage.getItem("basket"));
+        let fixedbox = document.querySelectorAll(".minicard");
+        if (document.querySelector(".buttonsincart") != null) {
+            document.querySelector(".buttonsincart").remove();
         }
-        if (document.querySelector(".cartfixedbox")) {
-          document.querySelector(".cartfixedbox").innerHTML += `<div  id="${element.id}" class="minicard p-3 d-flex border-bottom ">
+
+        fixedbox.forEach(element => {
+            element.remove();
+        });
+        if (basket) {
+            document.querySelector(".showinfo").lastElementChild.innerText = `${basket.length} item`
+            document.querySelector(".emptycart").classList.add("d-none");
+
+            basket.forEach(element => {
+                let disabled = "";
+                if (element.count < 2) {
+                    disabled = "disabled";
+                }
+                if (document.querySelector(".cartfixedbox")) {
+                    document.querySelector(".cartfixedbox").innerHTML += `<div  id="${element.id}" class="minicard p-3 d-flex border-bottom ">
           <div class="minicarticons col-lg-1 me-2">
           <i class="fa-solid fa-plus mb-2"></i>
               <h6>${element.count}</h6>
@@ -450,102 +506,103 @@ fixedbox.forEach(element => {
           <div class="minicartinfo col-lg-8 position-relative p-2">
               <h4>${element.desc}</h4>
               <p>$${element.price} x ${element.count}</p>
-              <span>$${(element.price*element.count).toFixed(2)} </span>
+              <span>$${(element.price * element.count).toFixed(2)} </span>
               <i class="fa-solid fa-xmark position-absolute "></i>
           </div>
       </div>`
-        }
-     
-      });
-if (document.querySelector(".buttonsincart")==null) {
-    document.querySelector(".cartfixedbox").innerHTML +=`  <div class="buttonsincart col-lg-11 m-auto ">
+                }
+
+            });
+            if (document.querySelector(".buttonsincart") == null) {
+                document.querySelector(".cartfixedbox").innerHTML += `  <div class="buttonsincart col-lg-11 m-auto ">
     <button color="primary " class=" checkout">Checkout Now </button>
    <a href="./cart.html"> <button color="primary" class="textapplybtn">View Cart</button> </a>
    </div>`
-}
-   
+            }
 
 
-      let plusbtns = document.querySelectorAll(".minicard .fa-plus");
-      plusbtns.forEach(button => {
-    button.onclick = function (e) {
 
-        e.stopPropagation();
+            let plusbtns = document.querySelectorAll(".minicard .fa-plus");
+            plusbtns.forEach(button => {
+                button.onclick = function (e) {
 
-        let productArr = [];
-        let productId = this.parentElement.parentElement.getAttribute("id");
-        if (localStorage.getItem("basket") != null) {
-            productArr = JSON.parse(localStorage.getItem("basket"));
+                    e.stopPropagation();
+
+                    let productArr = [];
+                    let productId = this.parentElement.parentElement.getAttribute("id");
+                    if (localStorage.getItem("basket") != null) {
+                        productArr = JSON.parse(localStorage.getItem("basket"));
+                    }
+                    let exsistProduct = productArr.find(pr => pr.id == productId);
+
+                    if (exsistProduct) {
+                        exsistProduct.count++;
+                        this.nextElementSibling.innerText = exsistProduct.count;
+                        this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerText = `${exsistProduct.price} x ${exsistProduct.count}`;
+                        this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerText = `${(exsistProduct.price * exsistProduct.count).toFixed(2)}.`;
+
+                    }
+                    if (exsistProduct.count > 1) this.parentElement.firstElementChild.removeAttribute("disabled");
+                    localStorage.setItem("basket", JSON.stringify(productArr));
+                }
+            });
+            let minusbtn = document.querySelectorAll(".minicard .fa-minus");
+            minusbtn.forEach(element => {
+                element.onclick = function (e) {
+                    e.stopPropagation();
+
+                    productArr = JSON.parse(localStorage.getItem("basket"));
+                    let productId = this.parentElement.parentElement.parentElement.getAttribute("id");
+                    let exsistProduct = productArr.find(pr => pr.id == productId);
+                    if (exsistProduct && exsistProduct.count > 1) {
+                        exsistProduct.count--;
+                        this.parentElement.previousElementSibling.innerText = exsistProduct.count;
+                        this.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerText = `${exsistProduct.price} x ${exsistProduct.count}`;
+                        this.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerText = `${(exsistProduct.price * exsistProduct.count).toFixed(2)}.`;
+                        localStorage.setItem("basket", JSON.stringify(productArr));
+                    }
+                    if (exsistProduct.count == 1) {
+                        this.setAttribute("disabled", "")
+                    }
+
+                }
+            });
+
+            let closebtn = document.querySelectorAll(".minicard .fa-xmark");
+            closebtn.forEach(element => {
+                element.onclick = function (e) {
+                    e.stopPropagation();
+
+                    productId = this.parentElement.parentElement.getAttribute("id");
+                    productArr = JSON.parse(localStorage.getItem("basket")).filter(pr => pr.id != productId);
+                    this.parentElement.parentElement.remove();
+                    if (productArr.length == 0) {
+                        localStorage.removeItem("basket");
+                        document.querySelector(".buttonsincart").remove();
+                        document.querySelector(".emptycart").classList.remove("d-none");
+
+                    }
+                    else {
+                        localStorage.setItem("basket", JSON.stringify(productArr));
+                        document.querySelector(".emptycart").classList.add("d-none");
+
+                    }
+                    document.querySelector(".showinfo").lastElementChild.innerText = `${productArr.length} item`
+                }
+            });
+
+
         }
-        let exsistProduct = productArr.find(pr => pr.id == productId);
-
-        if (exsistProduct) {
-            exsistProduct.count++;
-            this.nextElementSibling.innerText = exsistProduct.count;
-            this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerText=`${exsistProduct.price} x ${exsistProduct.count}`;
-            this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerText=`${(exsistProduct.price*exsistProduct.count).toFixed(2)}.`;
+        else {
+            document.querySelector(".showinfo").lastElementChild.innerText = `0 item`
+            document.querySelector(".emptycart").classList.remove("d-none");
 
         }
-        if (exsistProduct.count > 1) this.parentElement.firstElementChild.removeAttribute("disabled");
-        localStorage.setItem("basket", JSON.stringify(productArr));
-    }
-});
-let minusbtn = document.querySelectorAll(".minicard .fa-minus");
-minusbtn.forEach(element => {
-  element.onclick = function (e) {
-    e.stopPropagation();
-
-    productArr = JSON.parse(localStorage.getItem("basket"));
-    let productId = this.parentElement.parentElement.parentElement.getAttribute("id");
-    let exsistProduct = productArr.find(pr => pr.id == productId);
-    if (exsistProduct && exsistProduct.count > 1) {
-      exsistProduct.count--;
-      this.parentElement.previousElementSibling.innerText = exsistProduct.count;
-      this.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.innerText=`${exsistProduct.price} x ${exsistProduct.count}`;
-      this.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerText=`${(exsistProduct.price*exsistProduct.count).toFixed(2)}.`;
-      localStorage.setItem("basket", JSON.stringify(productArr));
-    }
-    if (exsistProduct.count == 1) {
-      this.setAttribute("disabled", "")
-    }
-  
-  }
-});
-
-let closebtn = document.querySelectorAll(".minicard .fa-xmark");
-closebtn.forEach(element => {
-  element.onclick = function (e) {
-    e.stopPropagation();
-
-    productId = this.parentElement.parentElement.getAttribute("id");
-    productArr = JSON.parse(localStorage.getItem("basket")).filter(pr => pr.id != productId);
-    this.parentElement.parentElement.remove();
-    if (productArr.length == 0) {
-      localStorage.removeItem("basket");
-      document.querySelector(".buttonsincart").remove();
-      document.querySelector(".emptycart").classList.remove("d-none");
-
-    }
-    else {
-        localStorage.setItem("basket", JSON.stringify(productArr));
-        document.querySelector(".emptycart").classList.add("d-none");
-    
-    }
-    document.querySelector(".showinfo").lastElementChild.innerText=`${productArr.length} item`
-  }
-});
-
-    }
-    else{
-        document.querySelector(".showinfo").lastElementChild.innerText=`0 item`
-        document.querySelector(".emptycart").classList.remove("d-none");
-
-    }
-    backgroudcart.classList.remove("d-none");
-})
-backgroudcart?.addEventListener("click", function() {
-    backgroudcart.classList.add("d-none");
-})
+        backgroudcart.classList.remove("d-none");
+    })
+    backgroudcart?.addEventListener("click", function () {
+        backgroudcart.classList.add("d-none");
+    })
 
 
 
@@ -606,6 +663,9 @@ fetch('https://dummyjson.com/products')
             displayResults(data);
         }
 
-
+       
     })
 
+
+
+    
